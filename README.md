@@ -1,4 +1,4 @@
-# Daimyo
+# Daimyo [![Build Status](https://travis-ci.org/inokappa/daimyo.svg?branch=master)](https://travis-ci.org/inokappa/daimyo)
 
 ## これなに
 
