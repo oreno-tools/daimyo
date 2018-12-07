@@ -65,7 +65,7 @@ module Daimyo
         wiki_name = path_array[-1].split('_')[1].gsub(/.md/, '')
         # Todo: このへん直す！
         path_array.pop
-        if path_array.length > 1
+        if path_array.length > 0
           wiki_name = path_array.join('/') + '/' +wiki_name
         else
           wiki_name
