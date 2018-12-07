@@ -59,7 +59,17 @@ module Daimyo
 
         path_array = diff_file[0].split('/')
         wiki_id = path_array[-1].split('_')[0]
+        # Todo: このへん直す！
+        path_array.shift
+        path_array.shift
         wiki_name = path_array[-1].split('_')[1].gsub(/.md/, '')
+        # Todo: このへん直す！
+        path_array.pop
+        if path_array.length > 1
+          wiki_name = path_array.join('/') + '/' +wiki_name
+        else
+          wiki_name
+        end
         @wiki.publish(wiki_id, wiki_name, diff_file[2]) if dry_run.nil?
       end
     end
