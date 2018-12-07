@@ -2,6 +2,8 @@ require 'daimyo'
 
 module Daimyo
   class Publish < Client
+    include Daimyo::Helper
+
     def initialize(options = nil)
       @wiki ||= Daimyo::Client.new
     end
@@ -53,7 +55,7 @@ module Daimyo
       end
 
       diff_files.each do |diff_file|
-        puts diff_file[0]
+        puts diff_print_header(diff_file[0])
         puts Diffy::Diff.new(diff_file[1], diff_file[2],
                              :include_diff_info => false).to_s(:color)
 

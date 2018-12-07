@@ -2,6 +2,8 @@ require 'daimyo'
 
 module Daimyo
   class List
+    include Daimyo::Helper
+
     def initialize
       @wiki ||= Daimyo::Client.new
     end
