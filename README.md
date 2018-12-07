@@ -35,6 +35,9 @@ bundle exec daimyo publish --project-id=your-backlog-project --dry-run
 bundle exec daimyo publish --project-id=your-backlog-project
 ```
 
+## Todo
+
+* 差分比較をローカルマシン上のファイル以外に, 実際の wiki とも比較出来るようにする (`--dry-run` する時に, `--remote` を付けるとか)
 
 ## Development
 
