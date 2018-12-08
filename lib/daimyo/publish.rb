@@ -62,12 +62,12 @@ module Daimyo
 
         if @is_local
           puts Diffy::Diff.new(diff_file[1], diff_file[2],
-                               :include_diff_info => false).to_s(:color)
+                               :include_diff_info => false, :context => 1).to_s(:color)
   
         else
           wiki_content = @wiki.export(wiki_id).body.content.gsub("\r\n", "\n")
           puts Diffy::Diff.new(wiki_content, diff_file[2],
-                               :include_diff_info => false).to_s(:color)
+                               :include_diff_info => false, :context => 1).to_s(:color)
         end
 
         # Todo: このへん直す！
