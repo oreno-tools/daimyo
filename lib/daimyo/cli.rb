@@ -27,6 +27,7 @@ module Daimyo
     desc 'publish', 'Publish wiki page.'
     option :project_id, type: :string, aliases: '-p', desc: 'Specify the project id or project key'
     option :dry_run, type: :boolean, aliases: '-d', desc: 'Dryrun.'
+    option :local, type: :boolean, aliases: '-l', desc: 'Execute Dryrun using local files.'
     def publish
       raise 'Backlog プロジェクトキーを指定してください.' if options[:project_id].nil?
       d = Daimyo::Publish.new(options)

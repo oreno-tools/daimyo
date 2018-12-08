@@ -4,8 +4,9 @@ module Daimyo
   class Publish < Client
     include Daimyo::Helper
 
-    def initialize(options = nil)
+    def initialize(params = nil)
       @wiki ||= Daimyo::Client.new
+      @is_local = params[:local] unless params.nil?
     end
 
     def search_files(project_id)
@@ -55,12 +56,20 @@ module Daimyo
       end
 
       diff_files.each do |diff_file|
-        puts diff_print_header(diff_file[0])
-        puts Diffy::Diff.new(diff_file[1], diff_file[2],
-                             :include_diff_info => false).to_s(:color)
-
+        puts diff_print_header(diff_file[0], @is_local)
         path_array = diff_file[0].split('/')
         wiki_id = path_array[-1].split('_')[0]
+
+        if @is_local
+          puts Diffy::Diff.new(diff_file[1], diff_file[2],
+                               :include_diff_info => false).to_s(:color)
+  
+        else
+          wiki_content = @wiki.export(wiki_id).body.content.gsub("\r\n", "\n")
+          puts Diffy::Diff.new(wiki_content, diff_file[2],
+                               :include_diff_info => false).to_s(:color)
+        end
+
         # Todo: このへん直す！
         path_array.shift
         path_array.shift
