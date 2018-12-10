@@ -2,6 +2,7 @@ require 'thor'
 require 'diffy'
 require 'terminal-table'
 require 'backlog_kit'
+require 'ruby-progressbar'
 
 require 'daimyo/config'
 require 'daimyo/cli'

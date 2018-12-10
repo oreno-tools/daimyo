@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'backlog_kit'
   spec.add_dependency 'diffy'
   spec.add_dependency 'terminal-table'
+  spec.add_dependency 'ruby-progressbar'
 end
