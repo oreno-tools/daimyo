@@ -9,6 +9,7 @@ require 'daimyo/client'
 require 'daimyo/export'
 require 'daimyo/helper'
 require 'daimyo/list'
+require 'daimyo/projects'
 require 'daimyo/publish'
 require 'daimyo/version'
 

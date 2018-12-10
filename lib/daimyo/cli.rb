@@ -33,5 +33,12 @@ module Daimyo
       d = Daimyo::Publish.new(options)
       d.run(options[:project_id], options[:dry_run])
     end
+
+    desc 'projects', 'Listing project in saved spaces.'
+    def projects
+      d = Daimyo::Projects.new
+      d.run
+    end
+
   end
 end
