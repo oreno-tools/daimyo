@@ -1,9 +1,10 @@
 PATH
   remote: .
   specs:
-    daimyo (0.0.1)
+    daimyo (0.0.2)
       backlog_kit
       diffy
+      ruby-progressbar
       terminal-table
       thor
 
@@ -53,6 +54,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+    ruby-progressbar (1.10.0)
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)

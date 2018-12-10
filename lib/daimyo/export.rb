@@ -8,12 +8,20 @@ module Daimyo
 
     def run(project_id, wiki_id = nil)
       ids = select_wiki_ids(project_id)
+      pb = ProgressBar.create(:format => "%a %b\u{15E7}%i %p%% %t",
+                              :progress_mark => ' ',
+                              :remainder_mark => "\u{FF65}",
+                              :starting_at => 10,
+                              :length => 50)
       ids.each do |id|
         wiki = @wiki.export(id).body
         name = wiki.name
         content = wiki.content
         write_file(project_id, id, name, content)
+        pb.increment
+        sleep 0.1
       end
+      pb.finish
     end
 
     private
