@@ -13,3 +13,4 @@
 vendor/
 .envrc
 .daimyo.yml
+.ruby-version

@@ -11,7 +11,7 @@ module Daimyo
 
     def search_files(project_id)
       space = @wiki.instance_variable_get(:@client).instance_variable_get(:@space_id)
-      paths = Dir.glob(space + '/' + project_id  +'/**/*')
+      paths = Dir.glob(space + '/' + project_id  + '/**/*')
 
       diffy_paths = []
       paths.each do |path|
@@ -77,7 +77,7 @@ module Daimyo
         # Todo: このへん直す！
         path_array.pop
         if path_array.length > 0
-          wiki_name = path_array.join('/') + '/' +wiki_name
+          wiki_name = path_array.join('/') + '/' + wiki_name
         else
           wiki_name
         end
