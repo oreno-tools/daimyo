@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'octorelease'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'simplecov', '~> 0.16'
   spec.add_dependency 'thor'
   spec.add_dependency 'backlog_kit'
   spec.add_dependency 'diffy'
