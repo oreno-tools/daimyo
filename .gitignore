@@ -14,3 +14,5 @@ vendor/
 .envrc
 .daimyo.yml
 .ruby-version
+
+Gemfile.lock
